@@ -1,0 +1,6 @@
+.idea
+.husky
+
+#
+node_modules
+src/.umi

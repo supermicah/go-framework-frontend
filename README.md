@@ -1,28 +1,65 @@
-# go-framework-admin
+> copy from [gin-admin](https://github.com/LyricTian/gin-admin) base on Ant Design React.
 
-> An API service based on golang.
+![gin-admin-frontend](./demo.png)
+
+# go-framework-frontend
+
+> go-framework-frontend is a frontend project for https://github.com/supermicah/go-framework-frontend
+
+## Features
+
+- :gem: **Neat Design**: Follow Ant Design specification
+- :triangular_ruler: **Common Templates**: Typical templates for enterprise applications
+- :rocket: **State of The Art Development**: Newest development stack of React/umi/dva/antd
+- :cn: **International**: Built-in i18n solution
+- :closed_lock_with_key: **RBAC**: Support rbac permission management
+
+## Environment Prepare
+
+> You can use [nvm](https://github.com/nvm-sh/nvm) to manage node version.
+
+- Node.js v16.20.2
 
 ## Quick Start
 
-```bash
-make start
-```
-
-## Build
+### Clone project
 
 ```bash
-make build
+git clone https://github.com/supermicah/go-framework-frontend.git
 ```
 
-## Generate wire inject files
+### Install dependencies
 
 ```bash
-make wire
+npm install
 ```
 
-## Generate swagger documents
+### Start project
 
 ```bash
-make swagger
+npm start
 ```
 
+### Build project
+
+```bash
+npm run build
+```
+
+### Check code style
+
+```bash
+npm run lint
+```
+
+You can also use script to auto fix some lint error:
+
+```bash
+npm run lint:fix
+```
+
+## MIT License
+
+```text
+Copyright (c) 2023 Lyric
+```
