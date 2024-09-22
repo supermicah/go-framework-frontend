@@ -1,6 +1,6 @@
 {
-  "name": "Gin Admin",
-  "short_name": "Gin Admin",
+  "name": "Go Admin",
+  "short_name": "Go Admin",
   "display": "standalone",
   "start_url": "./?utm_source=homescreen",
   "theme_color": "#002140",

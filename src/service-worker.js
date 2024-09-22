@@ -2,8 +2,8 @@
 /* eslint-disable no-underscore-dangle */
 /* globals workbox */
 workbox.core.setCacheNameDetails({
-  prefix: 'gin-admin',
-  suffix: 'v10',
+  prefix: 'go-framework-admin',
+  suffix: 'v1',
 });
 // Control all opened tabs ASAP
 workbox.clientsClaim();

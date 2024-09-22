@@ -33,19 +33,19 @@ const Welcome: React.FC = () => {
         />
         <Typography.Title style={titleStyle}>
           <a
-            href="https://github.com/LyricTian/gin-admin"
+            href="https://github.com/supermicah/go-framework-frontend"
             rel="noopener noreferrer"
             target="__blank"
           >
             <FormattedMessage id="pages.welcome.link" defaultMessage="Welcome" />
           </a>
         </Typography.Title>
-        <CodePreview>go install github.com/gin-admin/gin-admin-cli/v10@latest</CodePreview>
+        <CodePreview>go install github.com/supermicah/go-framework-cli@latest</CodePreview>
         <Typography.Title style={titleStyle}>
           <FormattedMessage id="pages.welcome.quickStart" />
         </Typography.Title>
         <CodePreview>
-          gin-admin-cli new -d ~/go/src --name testapp --desc &#39;A test API service based on
+          go-framework-cli new -d ~/go/src --name testapp --desc &#39;A test API service based on
           golang.&#39; --pkg &#39;github.com/xxx/testapp&#39;
         </CodePreview>
         <CodePreview>cd ~/go/src/testapp</CodePreview>
@@ -64,12 +64,12 @@ const Welcome: React.FC = () => {
           <FormattedMessage id="pages.welcome.generate" />
         </Typography.Title>
         <CodePreview>
-          gin-admin-cli gen -d . -m CMS -s Category --structs-comment &#39;Category management&#39;
+          go-framework-cli gen -d . -m CMS -s Category --structs-comment &#39;Category management&#39;
         </CodePreview>
         <Typography.Title style={titleStyle}>
           <FormattedMessage id="pages.welcome.remove" />
         </Typography.Title>
-        <CodePreview>gin-admin-cli rm -d . -m CMS -s Category</CodePreview>
+        <CodePreview>go-framework-cli rm -d . -m CMS -s Category</CodePreview>
       </Card>
     </PageContainer>
   );

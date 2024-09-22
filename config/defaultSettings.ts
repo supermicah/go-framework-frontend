@@ -11,7 +11,7 @@ const Settings: LayoutSettings & {
   fixedHeader: false,
   fixSiderbar: true,
   colorWeak: false,
-  title: 'Gin Admin',
+  title: 'Go Admin',
   pwa: false,
   logo: '/logo.svg',
   iconfontUrl: '',
