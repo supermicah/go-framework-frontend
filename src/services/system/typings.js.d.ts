@@ -65,6 +65,8 @@ declare namespace API {
     updated_at?: string;
     statusChecked?: boolean;
     parent_name?: string;
+    /** 用于类型判断使用，实际内容无用处 **/
+    _menu?: never;
   };
 
   type MenuResource = {

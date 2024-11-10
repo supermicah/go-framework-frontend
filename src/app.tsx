@@ -198,7 +198,6 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
         result.push(menuItem);
       }
     });
-    console.log(result);
     return result;
   };
 

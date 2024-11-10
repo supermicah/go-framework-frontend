@@ -15,6 +15,7 @@ const MenuTree: React.FC<MenuTreeProps> = (props: MenuTreeProps) => {
 
   useEffect(() => {
     fetchMenu({ status: 'enabled' }).then((res) => {
+      console.log("MenuTree:",res);
       if (res.data) {
         setData(convertTreeData(res.data));
         setExpandedKeys(res.data.map((v) => v.id!));
