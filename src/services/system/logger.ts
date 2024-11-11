@@ -15,5 +15,6 @@ export async function fetchLogger(params: API.PaginationParam, options?: { [key:
         },
         ...(options || {}),
     });
+    console.log(response);
     return ConvertJS(convertTypeLogger, response);
 }

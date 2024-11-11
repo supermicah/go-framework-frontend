@@ -80,7 +80,33 @@ export function ConvertUserGo2JS(user: GoAPI.User): API.User {
     if (user.id) {
         jsUser.id = `${user.id}`;
     }
+    if (user.roles) {
+        jsUser.roles = ConvertUserRolesGo2JS(user.roles)
+    }
     return jsUser;
+}
+
+export function ConvertUserRolesGo2JS(userRoles: GoAPI.UserRole[]): API.UserRole[] {
+    let jsUserRoles: API.UserRole[] = [];
+    for (let i = 0; i < userRoles.length; i++) {
+        jsUserRoles.push(ConvertUserRoleGo2JS(userRoles[i]));
+    }
+    return jsUserRoles;
+}
+
+export function ConvertUserRoleGo2JS(userRole: GoAPI.UserRole): API.UserRole {
+    let jsUserRole: API.UserRole = {}
+    Object.assign(jsUserRole, userRole);
+    if (userRole.id) {
+        jsUserRole.id = `${userRole.id}`;
+    }
+    if (userRole.role_id) {
+        jsUserRole.role_id = `${userRole.role_id}`;
+    }
+    if (userRole.user_id) {
+        jsUserRole.user_id = `${userRole.user_id}`;
+    }
+    return jsUserRole;
 }
 
 export function ConvertMenusGo2JS(menus: GoAPI.Menu[]): API.Menu[] {

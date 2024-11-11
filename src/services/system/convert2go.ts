@@ -32,15 +32,43 @@ export function ConvertUserJS2Go(user: API.User): GoAPI.User {
     if (user.id) {
         goUser.id = parseInt(user.id);
     }
+    if (user.roles) {
+        goUser.roles = ConvertUserRolesJS2Go(user.roles)
+    }
     return goUser;
 }
 
-export function ConvertMenusJS2Go(menus: API.Menu[]): GoAPI.Menu[] {
-    let jsMenus: GoAPI.Menu[] = [];
-    for (let i = 0; i < menus.length; i++) {
-        jsMenus.push(ConvertMenuJS2Go(menus[i]));
+
+export function ConvertUserRolesJS2Go(userRoles: API.UserRole[]): GoAPI.UserRole[] {
+    let goUserRoles: GoAPI.UserRole[] = [];
+    for (let i = 0; i < userRoles.length; i++) {
+        goUserRoles.push(ConvertUserRoleJS2Go(userRoles[i]));
     }
-    return jsMenus;
+    return goUserRoles;
+}
+
+export function ConvertUserRoleJS2Go(userRole: API.UserRole): GoAPI.UserRole {
+    let goUserRole: GoAPI.UserRole = {}
+    Object.assign(goUserRole, userRole);
+    if (userRole.id) {
+        goUserRole.id = parseInt(userRole.id);
+    }
+    if (userRole.role_id) {
+        goUserRole.role_id = parseInt(userRole.role_id);
+    }
+    if (userRole.user_id) {
+        goUserRole.user_id = parseInt(userRole.user_id);
+    }
+
+    return goUserRole;
+}
+
+export function ConvertMenusJS2Go(menus: API.Menu[]): GoAPI.Menu[] {
+    let goMenus: GoAPI.Menu[] = [];
+    for (let i = 0; i < menus.length; i++) {
+        goMenus.push(ConvertMenuJS2Go(menus[i]));
+    }
+    return goMenus;
 }
 
 export function ConvertMenuJS2Go(menu: API.Menu): GoAPI.Menu {
