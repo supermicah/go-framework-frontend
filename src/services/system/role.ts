@@ -2,7 +2,7 @@
 /* eslint-disable */
 import {request} from 'umi';
 import {responseConvert} from "@/services/response-convert";
-import {convertRoleJSRequest2Go, convertRoleGoResponse2JS} from "@/services/system/convert/convertRole";
+import {convertRoleJSRequest2Go, convertRoleGoResponse2JS} from "@/services/system/convert/role";
 
 /** Query role list GET /api/v1/roles */
 export async function fetchRole(params: API.PaginationParam, options?: { [key: string]: any }) {

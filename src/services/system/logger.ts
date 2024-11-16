@@ -2,7 +2,7 @@
 /* eslint-disable */
 import {request} from 'umi';
 import {responseConvert} from "@/services/response-convert";
-import {convertLoggerGoResponse2JS} from "@/services/system/convert/convertLogger";
+import {convertLoggerGoResponse2JS} from "@/services/system/convert/logger";
 
 /** Query user list GET /api/v1/loggers */
 export async function fetchLogger(params: API.PaginationParam, options?: { [key: string]: any }) {

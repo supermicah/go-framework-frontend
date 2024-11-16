@@ -2,8 +2,8 @@
 /* eslint-disable */
 import {request} from 'umi';
 import {responseConvert} from "@/services/response-convert";
-import {convertMenuGoResponse2JS} from "@/services/system/convert/convertMenu";
-import {convertUserGoResponse2JS, convertUserJSRequest2Go} from "@/services/system/convert/convertUser";
+import {convertMenuGoResponse2JS} from "@/services/system/convert/menu";
+import {convertUserGoResponse2JS, convertUserJSRequest2Go} from "@/services/system/convert/user";
 
 /** Get captcha ID GET /api/v1/captcha/id */
 export async function getCaptchaId(options?: { [key: string]: any }) {

@@ -2,7 +2,7 @@
 /* eslint-disable */
 import {request} from 'umi';
 import {responseConvert} from "@/services/response-convert";
-import {convertMenuGoResponse2JS, convertMenuJSRequest2Go} from "@/services/system/convert/convertMenu";
+import {convertMenuGoResponse2JS, convertMenuJSRequest2Go} from "@/services/system/convert/menu";
 
 /** Query menu list GET /api/v1/menus */
 export async function fetchMenu(params: API.PaginationParam, options?: { [key: string]: any }) {

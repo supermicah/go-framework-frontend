@@ -2,7 +2,7 @@
 /* eslint-disable */
 import {request} from 'umi';
 import {responseConvert} from "@/services/response-convert";
-import {convertUserGoResponse2JS, convertUserJSRequest2Go} from "@/services/system/convert/convertUser";
+import {convertUserGoResponse2JS, convertUserJSRequest2Go} from "@/services/system/convert/user";
 
 /** Query user list GET /api/v1/users */
 export async function fetchUser(params: API.PaginationParam, options?: { [key: string]: any }) {

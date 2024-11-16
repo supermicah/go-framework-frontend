@@ -2,7 +2,7 @@ import {parseInt} from "lodash";
 import {
     convertMenuResourcesJSReq2Go,
     convertMenuResourcesGoResp2JS
-} from "@/services/system/convert/convertMenuResource";
+} from "@/services/system/convert/menuResource";
 
 export function convertMenuJSRequest2Go(item: API.Menu): GoAPI.Menu {
     let goItem: GoAPI.Menu = {}

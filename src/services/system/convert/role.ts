@@ -1,5 +1,5 @@
 import {parseInt} from "lodash";
-import {convertRoleMenusGoResp2JS, convertRoleMenusJSReq2Go} from "@/services/system/convert/convertRoleMenu";
+import {convertRoleMenusGoResp2JS, convertRoleMenusJSReq2Go} from "@/services/system/convert/roleMenu";
 
 export function convertRoleJSRequest2Go(role: API.Role): GoAPI.Role {
     let goRole: GoAPI.Role = {}
