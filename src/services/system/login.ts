@@ -1,9 +1,9 @@
 // @ts-ignore
 /* eslint-disable */
 import {request} from 'umi';
-import {convertTypeMenu, convertTypeUser} from '@/services/system/convert';
-import {ConvertJS} from '@/services/system/convert2js';
-import {ConvertGo} from "@/services/system/convert2go";
+import {responseConvert} from "@/services/response-convert";
+import {convertMenuGoResponse2JS} from "@/services/system/convert/convertMenu";
+import {convertUserGoResponse2JS, convertUserJSRequest2Go} from "@/services/system/convert/convertUser";
 
 /** Get captcha ID GET /api/v1/captcha/id */
 export async function getCaptchaId(options?: { [key: string]: any }) {
@@ -41,7 +41,7 @@ export async function fetchCurrentMenus(options?: { [key: string]: any }) {
         method: 'GET',
         ...(options || {}),
     });
-    return ConvertJS(convertTypeMenu, response)
+    return responseConvert(response, convertMenuGoResponse2JS)
 }
 
 /** Change current user password PUT /api/v1/current/password */
@@ -71,14 +71,14 @@ export async function getCurrentUser(options?: { [key: string]: any }) {
         ...(options || {}),
     });
 
-    return ConvertJS(convertTypeUser, response)
+    return responseConvert(response, convertUserGoResponse2JS)
 }
 
 /** Change current user info PUT /api/v1/current/user */
 export async function updateCurrentUser(body: API.User, options?: { [key: string]: any }) {
     return request<API.ResponseResult<any>>('/api/v1/current/user', {
         method: 'PUT',
-        data: ConvertGo(convertTypeUser, body),
+        data: convertUserJSRequest2Go(body),
         ...(options || {}),
     });
 }

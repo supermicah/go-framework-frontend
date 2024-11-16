@@ -1,9 +1,8 @@
 // @ts-ignore
 /* eslint-disable */
 import {request} from 'umi';
-import {ConvertJS} from "@/services/system/convert2js";
-import {convertTypeMenu} from '@/services/system/convert';
-import {ConvertGo} from "@/services/system/convert2go";
+import {responseConvert} from "@/services/response-convert";
+import {convertMenuGoResponse2JS, convertMenuJSRequest2Go} from "@/services/system/convert/convertMenu";
 
 /** Query menu list GET /api/v1/menus */
 export async function fetchMenu(params: API.PaginationParam, options?: { [key: string]: any }) {
@@ -14,17 +13,17 @@ export async function fetchMenu(params: API.PaginationParam, options?: { [key: s
         },
         ...(options || {}),
     });
-    return ConvertJS(convertTypeMenu, response)
+    return responseConvert(response, convertMenuGoResponse2JS)
 }
 
 /** Create menu record POST /api/v1/menus */
 export async function addMenu(body: API.Menu, options?: { [key: string]: any }) {
     let response = request<API.ResponseResult<API.Menu>>('/api/v1/menus', {
         method: 'POST',
-        data: ConvertGo(convertTypeMenu, body),
+        data: convertMenuJSRequest2Go(body),
         ...(options || {}),
     });
-    return ConvertJS(convertTypeMenu, response)
+    return responseConvert(response, convertMenuGoResponse2JS)
 }
 
 /** Get menu record by ID GET /api/v1/menus/${id} */
@@ -33,17 +32,17 @@ export async function getMenu(id: string, options?: { [key: string]: any }) {
         method: 'GET',
         ...(options || {}),
     });
-    return ConvertJS(convertTypeMenu, response)
+    return responseConvert(response, convertMenuGoResponse2JS)
 }
 
 /** Update menu record by ID PUT /api/v1/menus/${id} */
 export async function updateMenu(id: string, body: API.Menu, options?: { [key: string]: any }) {
     let response = request<API.ResponseResult<any>>(`/api/v1/menus/${id}`, {
         method: 'PUT',
-        data: ConvertGo(convertTypeMenu, body),
+        data: convertMenuJSRequest2Go(body),
         ...(options || {}),
     });
-    return ConvertJS(convertTypeMenu, response)
+    return responseConvert(response, convertMenuGoResponse2JS)
 }
 
 /** Delete menu record by ID DELETE /api/v1/menus/${id} */
@@ -52,5 +51,5 @@ export async function delMenu(id: string, options?: { [key: string]: any }) {
         method: 'DELETE',
         ...(options || {}),
     });
-    return ConvertJS(convertTypeMenu, response)
+    return responseConvert(response, convertMenuGoResponse2JS)
 }

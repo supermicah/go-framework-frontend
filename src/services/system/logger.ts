@@ -1,8 +1,8 @@
 // @ts-ignore
 /* eslint-disable */
 import {request} from 'umi';
-import {ConvertJS} from "@/services/system/convert2js";
-import {convertTypeLogger} from "@/services/system/convert";
+import {responseConvert} from "@/services/response-convert";
+import {ConvertLoggerGoResponse2JS} from "@/services/system/convert/convertLogger";
 
 /** Query user list GET /api/v1/loggers */
 export async function fetchLogger(params: API.PaginationParam, options?: { [key: string]: any }) {
@@ -15,6 +15,5 @@ export async function fetchLogger(params: API.PaginationParam, options?: { [key:
         },
         ...(options || {}),
     });
-    console.log(response);
-    return ConvertJS(convertTypeLogger, response);
+    return responseConvert(response, ConvertLoggerGoResponse2JS);
 }
