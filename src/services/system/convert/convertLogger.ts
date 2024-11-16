@@ -1,4 +1,4 @@
-export function ConvertLoggerGoResponse2JS(item: any): any {
+export function convertLoggerGoResponse2JS(item: any): any {
     if (Array.isArray(item)) {
         return convertLoggersGoResp2JS(item);
     } else {
