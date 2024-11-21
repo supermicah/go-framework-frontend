@@ -3,8 +3,8 @@
   "info": {
     "contact": {},
     "description": "A lightweight, flexible, elegant and full-featured RBAC scaffolding based on GIN + GORM 2.0 + Casbin 2.0 + Wire DI.",
-    "title": "ginadmin",
-    "version": "v10.0.0"
+    "title": "go-framwork-frontend",
+    "version": "v1.0.0"
   },
   "servers": [
     {

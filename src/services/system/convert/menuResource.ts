@@ -14,6 +14,9 @@ export function convertMenuResourceJSReq2Go(item: API.MenuResource): GoAPI.MenuR
     if (item.id) {
         goItem.id = parseInt(item.id);
     }
+    if (item.menu_id) {
+        goItem.menu_id = parseInt(item.menu_id);
+    }
     return goItem;
 }
 
